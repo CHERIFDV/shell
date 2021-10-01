@@ -1,0 +1,54 @@
+.user-chat-room {
+  width: 350px;
+  height: 100px;
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: 90px auto;
+  position: relative;
+  margin: 20px 0;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  .avatar {
+    img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+  }
+  .data {
+    color: #726d6d;
+    .username {
+      font-size: 18pt;
+      font-weight: bold;
+
+      &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+      }
+      &.online {
+        &::after {
+          background-color: greenyellow;
+        }
+      }
+      &.offline {
+        &::after {
+          background-color: orangered;
+        }
+      }
+    }
+    .last-message {
+      margin-top: 3px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.tache{
+
+    .anticon{
+        font-size: 15px !important;
+    }
+    .ant-table-thead > tr > th{
+      background-color: gold;
+    }
+
+    .btn{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.btn:hover {
+    color: #fff;
+    background-color: gold;
+    border-color: gold;
+}
+ .btn:focus{
+    color: #fff;
+    background-color: gold;
+    border-color: gold;
+}
+.btn {
+    color: #fff;
+    background-color: #f00;
+    border-color: #f00;
+}
+
+thead{
+    background-color: gold;  
+}
+.modelclient{
+margin: 3%;
+}
+
+.ant-input-number{
+    width: 100% !important;
+    max-width: 90px;
+}
+#ref{
+    width: 100% !important;
+    max-width: 90px;
+}
+.table-responsive{
+@media screen and (max-width: 640px) {
+    font-size: 10px; 
+    
+
+ 
+ }
+ @media screen and (min-width: 640px) {
+    font-size: 17px; 
+ }
+ @media screen and (min-width: 1024px) {
+    font-size: 19px; 
+ }
+   }
+}

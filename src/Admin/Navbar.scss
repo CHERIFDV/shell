@@ -1,0 +1,113 @@
+.navbara{
+   
+    .ant-layout-content{
+        margin: 50px;
+    }
+    
+    .ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub{
+        background-color: black;  
+    }
+    li:hover{
+        color: gold;
+    }
+    .ant-menu-submenu-title:hover{
+        color: gold;
+    }
+    .ant-menu{
+        background-color: white;
+    }
+    .ant-layout-sider{
+        background-color: white;
+    }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+         color: black;
+         background-color: gold;
+     }
+     .ant-layout-header{
+         background-color: gold;
+     }
+     .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-expand-icon, .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow{
+        color: gold;
+    }
+    .ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after{
+        border-right: 3px solid red;
+    }
+    .ant-menu-vertical .ant-menu-submenu-selected, .ant-menu-vertical-left .ant-menu-submenu-selected, .ant-menu-vertical-right .ant-menu-submenu-selected{
+        color: gold;
+    }
+    .ant-menu-submenu-selected{
+        color: gold;
+    }
+    .ant-menu-item-selected{
+        color: gold;
+    }
+    a:hover{
+        color: gold;
+        text-decoration: none;
+    }
+    .ant-menu-item-selected a, .ant-menu-item-selected a:hover{
+        color: red;
+    }
+  
+  .ant-layout-sider-trigger{
+      background: gray;
+  }
+  .ant-image-mask-info{
+    transform: scale(0.7);
+  }
+  a:hover{
+    color: red;
+    text-decoration: none ;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+   
+}
+  .accounticone{
+      float: Right;
+      margin: 0px;
+      padding: auto;
+      color:black;
+      z-index:3;
+      .anticon-user{
+        color:black;
+      }
+  }
+  .anticon{
+   font-size: x-large;
+  }
+  .ant-menu-inline{
+   .anticon{
+    font-size:xx-large;
+   }
+
+}  
+ .navbarscroll{
+    overflow-y: auto;
+    position: fixed;
+    height:95%;
+}
+
+@media  screen and  (max-width: 690px ) {
+    .ant-layout-content{
+        margin: 0px !important;
+    }
+
+
+}
+ .ant-menu-item-active{
+    color: gold !important;
+ }
+.ant-menu-vertical.ant-menu-sub:not([class*="-active"]), .ant-menu-vertical-left.ant-menu-sub:not([class*="-active"]), .ant-menu-vertical-right.ant-menu-sub:not([class*="-active"]){
+    z-index: 100;
+    a {
+        color: black;
+        a:hover {
+          color: gold;
+        }}
+
+
+}
+}

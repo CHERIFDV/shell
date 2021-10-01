@@ -1,0 +1,65 @@
+{
+  "name": "shellgarage",
+  "proxy": "http://localhost:8000",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.5.0",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.13.0",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "downloadjs": "^1.4.7",
+    "firebase": "^8.4.1",
+    "font-awesome": "^4.7.0",
+    "formik": "^2.2.6",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.0",
+    "react-cam": "^1.1.11",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "react-indiana-drag-scroll": "^1.8.1",
+    "react-infinite-scroll-hook": "^4.0.1",
+    "react-jwt": "^1.1.2",
+    "react-pdf": "^5.3.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-webcam": "^5.2.3",
+    "reactstrap": "^8.9.0",
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "dart-sass": "^1.25.0",
+    "node-sass": "^5.0.0",
+    "node-sass-install": "^1.0.2"
+  }
+}

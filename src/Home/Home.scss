@@ -1,0 +1,32 @@
+.Home{
+ 
+
+    background-size: cover;
+    background-repeat: no-repeat;
+  //  background-image: url("https://www.garage-primum.fr/wp-content/uploads/2019/02/entretien-courant-garage.jpg");
+  .carousel{
+    width: 70%;
+    height: 70%;
+    margin-bottom: 70px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .carousel-item img{
+   max-height: 400px;
+   
+  }
+  /*/ .ant-notification-notice{
+    width: 50% !important;
+    max-width: calc(100vw - 10px * 2);
+  }/*/
+  
+  .listepub{
+    display: block;
+  }
+  @media (max-width: 670px) {
+   
+    .carousel-item img{
+      height: 150px;
+    }
+  }
+}

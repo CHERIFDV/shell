@@ -1,0 +1,44 @@
+.ajouteclient{
+ 
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        .ulliste ul{
+            list-style: none;
+            text-align: center;
+           margin-left: auto;
+           margin-right: auto;
+           width: 100%;
+            display:inline;
+        }
+      
+    
+        .form-group {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    .btn{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .anticon{
+        font-size: x-large;
+    }
+    
+    .btn:hover{
+        color: #fff;
+        background-color: #f6d000;
+        border-color: #ffb914;
+    }
+    .btn {
+        color: #fff;
+        background-color: #f00;
+        border-color: #f00;
+    }
+    
+   
+   
+    
+}

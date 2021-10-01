@@ -1,0 +1,62 @@
+.About{
+   
+text-align: center;
+.About h1{
+    color: red;
+}
+.branch{
+color:black ;
+}
+.employee{
+color: #495867;
+}
+.yos{
+color: red;
+}
+.numbre{
+    font-size: 50px;
+}
+
+
+.imge{
+
+
+}
+.imge img{
+    transform: scale(0.7);
+    max-width: 100%;
+}
+
+.liste li{
+    display: inline;
+    text-align: center;
+    padding: 2px ;
+    margin: 0;
+    width: 19%;
+}
+.About p{
+    margin: 50px;
+}
+.ltnumber div{
+    display: inline-flex;
+}
+.info{
+    margin-right: auto;
+    margin-left: auto;
+}
+.info div{
+   
+    
+}
+@media (max-width: 450px) {
+    .info{
+        margin-right:auto;
+        margin-left: auto;
+    }
+    .imge img{ 
+
+        width: 200px;
+        height: 200px;
+    }
+    
+}}

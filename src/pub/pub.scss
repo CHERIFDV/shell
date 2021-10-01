@@ -1,0 +1,115 @@
+.pub{
+   width: 60%;
+    .ant-card-cover{
+       display: flex;
+       
+      }
+      .comment-action {
+        padding-left: 8px;
+        cursor: 'auto';
+      }
+      .affichcomment:hover{
+        text-decoration: underline;
+      }
+      .ant-comment-actions{
+.anticon-like{
+  font-size: 15px;
+}
+.anticon-dislike{
+  font-size: 15px;
+
+}
+      }
+      
+      [class*='-col-rtl'] .comment-action {
+        padding-right: 8px;
+        padding-left: 0;
+      }
+     margin-left:auto ;
+     margin-right: auto;
+     
+     .ant-input{
+      height: 2px;
+      min-height:20px
+     }
+     .input{
+      height: 30px;
+      border: 2px solid #d0cece;
+      border-radius: 15px;
+     }
+     
+     .ant-btn-primary:hover{
+      color: gold;
+      
+      
+     }
+      .ant-btn-primary {
+      color: gray;
+      border: 2px solid #d0cece;
+      border-radius: 15px;
+      background-color: transparent;
+     height: 30px;
+     }
+     .affichcomment{
+       font-size: 10px;
+       margin: 0;
+       padding: 0;
+       margin-left: 10px;
+       color: gray;
+     }
+    .ant-image-img{
+   max-width: 600px;
+   max-height: 500px;
+    }
+    .anticon-setting{
+     font-size: x-large;
+    }
+    .btn-secondary{
+      color:gray;
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .btn-secondary:hover{
+      color:gray;
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .ant-card-actions > li > span > .anticon{
+      color:gray;
+      font-size: 30px;
+      
+    }
+    .ant-card-actions > li > span > .anticon:hover{
+      color:red
+    }
+    .ant-comment-content{
+      font-size: 100%;
+    }
+    .ant-card-bordered{
+       
+    }
+    .ant-form-item-control-input-content{
+     display: flex;
+    }
+    
+    @media  screen and  (max-width: 570px) {
+      width: 100%;
+      .ant-btn-primary {
+      width:40% ;
+      height: 30px;
+      font-size: 5;
+      }
+      .input{
+        height: 30px;
+      }
+      .ant-card-actions .anticon{
+        font-size: 20px !important;
+      }
+     .imagepub{
+      
+
+      }
+
+
+     }
+}

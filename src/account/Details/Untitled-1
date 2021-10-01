@@ -1,0 +1,49 @@
+import LoadingPage from "../loading/LoadingPage";
+<LoadingPage/> 
+
+setloading(false)
+
+setloading(true)
+{loading?<LoadingPage/> :<></>}
+{this.state.loading?<LoadingPage/> :<></>}
+const [loading,setloading]=useState(false);
+
+import React, { useState } from 'react';
+
+this.setState({
+        loading:true,
+        
+      })
+this.setState({
+        loading:false,
+        
+      })
+
+
+
+ if(response.data.status==true){
+             notification[response.data.type]({
+          message: 'Update',
+          description:
+            response.data.message,
+        });
+          }else{
+            notification[response.data.type]({
+              message: 'Warning',
+              description:response.data.message
+               ,
+            });
+          }
+          <input  type="text" name="search" placeholder="recherche" onChange={onsearch} value={search}/>
+            const [search,setsearch]=useState("");
+const onsearch=e=>{
+    setsearch(e.target.value.toLowerCase())
+   }
+   .filter(item=>item.props.titre.toLowerCase().indexOf(search.toLowerCase()) !== -1)
+.filter(item=>item.nom.toLowerCase().indexOf(search) !== -1||item.prenom.indexOf(search) !== -1||item.model.toString().indexOf(search) !== -1 ||item.matricule.toString().indexOf(search) !== -1)
+
+,{resetForm}
+resetForm({values:""})
+
+
+

@@ -1,0 +1,92 @@
+.listepub{
+
+    display: flex;
+    flex-flow: wrap;
+    .anticon{
+       
+    }
+   
+.listepub1{
+    .pub{
+        width: 100%;
+        }
+    .ant-switch-checked{
+        background-color: black;
+      }
+      .ss{
+          float: right;
+          display: flex;
+          flex-flow: row wrap; 
+      }
+      .supprimer{
+      
+      min-width: 50px;
+       }
+    @media  screen and  (max-width: 570px) {
+        width: 100%;
+        .ant-btn-primary {
+       
+        font-size: 5;
+        }
+        .ant-btn > span{
+            margin: auto;
+            font-size: x-small;
+        }
+        .input{
+          height: 30px;
+        }
+  
+        .ant-card-actions .anticon{
+            font-size: 20px !important;
+          }
+  
+  
+       }   
+
+       @media  screen and  (max-width: 390px) {
+        width: 100%;
+        .ant-btn-primary {
+        width:100% ;
+        height: 30px;
+        font-size: 5;
+        }
+        .ant-btn > span{
+            margin: auto;
+            font-size: x-small;
+        }
+        .input{
+          height: 30px;
+        }
+        .ant-layout-content{
+            width: 200px;
+        }
+        .ant-comment-content-detail p{
+            width: 50%;
+        }
+       
+  
+       }   
+       
+
+
+
+
+}
+
+
+
+
+
+}
+.addpub{
+  
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+} 
+.plus{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}

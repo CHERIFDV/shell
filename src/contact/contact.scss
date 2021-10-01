@@ -1,0 +1,63 @@
+.Contact {
+   
+.formc{
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+.formc input  {
+    
+    height: 50px;
+    border: 2px solid gray;
+    border-radius: 15px;
+  }
+   #description{
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+.btn-secondary{
+    color: #fff;
+    background-color: #f00;
+    border-color: #f00;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
+.btn-secondary:hover{
+    color: #fff;
+    background-color: #f6d000;
+    border-color: #ffb914;
+}
+.rounded{
+    margin: 20px;
+}
+
+@media (max-width: 1050px) {
+
+    .formc{
+        margin-top: auto;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .nav{
+   
+       display: inline;
+
+    }
+  .nav-item{
+        width: 100%;
+        padding: auto;
+       
+    }
+  .form-group {
+        
+        text-align: center;
+    }
+}
+@media (min-width: 1050px) {
+.nav-item{
+   width: 50%;
+    padding-bottom: 10%;
+}}
+}
+  
