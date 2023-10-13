@@ -9,7 +9,7 @@ import './Register.scss';
 import { useState } from 'react';
 import axios from'axios';
 import LoadingPage from "../../loading/LoadingPage";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 const props = {
   name: 'file',
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
@@ -57,7 +57,7 @@ const schema = yup.object().shape({
 
 
 function Register() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const [afpassword,setafpassword]=useState('password');
   const [icons,seticon]=useState(<EyeOutlined/>);
@@ -83,7 +83,7 @@ function Register() {
         setloading(false)
        resetForm({values:""})
        let { from } = location.state || { from: { pathname: "/employe" } };
-       history.replace(from); 
+       navigate(from); 
 
 
      })

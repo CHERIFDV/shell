@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
-  Jumbotron,
   Input,
   InputGroup,
   Button,
   Tooltip,
 } from "reactstrap";
-import { Link, useParams, Redirect } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import firebase from "../firebase.config";
 import {  useLocation } from "react-router-dom";
 import "./Chat.scss";
@@ -23,7 +22,7 @@ export default () => {
   const [backToolTip, setBackToolTip] = useState(false);
   const [message, setMessage] = useState("");
   const [sendMsgError, setSendMsgError] = useState("");
-  const [redirect, setRedirect] = useState({
+  const [Navigate, setNavigate] = useState({
     valid: false,
     message: "",
     path: "",
@@ -101,7 +100,7 @@ export default () => {
               exportedData.messages = arrayMsgs;
               setFirebaseMessages(exportedData);
             } else {
-              setRedirect({
+              setNavigate({
                 valid: true,
                 message: "Impossible de trouver la conversation a partir l'id " + id,
                 path: "/404",
@@ -130,19 +129,18 @@ export default () => {
     }, 500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  if (redirect.valid) {
+  if (Navigate.valid) {
     return (
-      <Redirect
+      <Navigate
         to={{
-          pathname: redirect.path,
-          state: { message: redirect.message, path: "/admin/inbox/" + id },
+          pathname: Navigate.path,
+          state: { message: Navigate.message, path: "/admin/inbox/" + id },
         }}
       />
     );
   }
   return (
     <Container fluid={false}>
-      <Jumbotron className="mt-2">
         <div className="back-arrow">
           <Link to="/admin/chatinbox" id="backToInbox">
             <i className="fas fa-long-arrow-alt-left fa-5x"></i>
@@ -215,7 +213,6 @@ export default () => {
             </Button>
           </InputGroup>
         </Container>
-      </Jumbotron>
     </Container>
   );
 };

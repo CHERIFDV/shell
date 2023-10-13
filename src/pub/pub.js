@@ -1,12 +1,12 @@
 import React,{ useEffect,useState } from 'react';
 import axios from'axios';
-import { Card, Avatar,Image,Comment,Tooltip, Form, Button, List, Input,Modal } from 'antd';
-import moment from 'moment';
+import { Card, Avatar,Image,Tooltip, Form, Button, List, Input,Modal } from 'antd';
+import { Comment } from'@ant-design/compatible';
 import { EditOutlined,SendOutlined, LikeOutlined,DeleteOutlined, DislikeFilled, LikeFilled,DislikeOutlined,ExclamationCircleOutlined } from '@ant-design/icons';
 import { format } from 'date-fns';
 import './pub.scss';
 import { Link } from "react-router-dom";
-import { useLocation,useHistory } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import logo from "./logo.jpg";
 const { Meta } = Card;
 const { confirm } = Modal;
@@ -39,7 +39,7 @@ function Pub(props){
   const [replay, setreaplay] = useState(null);
   
   const [refresh, setrefrech] = useState(0);
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   
     
@@ -47,7 +47,7 @@ function Pub(props){
 const like = (id) => { 
 
 if (user==null) {
-  history.replace(from) 
+  navigate(from) 
 }
 
 
@@ -68,7 +68,7 @@ if(document.getElementById("spanl1"+id).childNodes[1].style.display==='none'){
 
 const dislike = (id) => {
   if (user==null) {
-    history.replace(from) 
+    navigate(from) 
   }
   if(document.getElementById("spand1"+id).childNodes[1].style.display==='none'){
   axios.post('/api/commentaire/dislike_comment/'+user.id +'/'+id,{id:id},{ headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}` }})
@@ -181,7 +181,7 @@ useEffect(() => {
   document.getElementById("aff"+props.id).innerHTML="Mask commentaire"
   }) 
   }else{         
-  history.replace(from) 
+  navigate(from) 
   }}
   return () => { 
   }
@@ -190,7 +190,7 @@ useEffect(() => {
   const handleSubmit = () => {
     
     if (user==null) {
-      history.replace(from) 
+      navigate(from) 
       return
     }
     if (!value) {
@@ -245,7 +245,7 @@ useEffect(() => {
   };
   const supprimer=(id)=>{
     if (user==null) {
-      history.replace(from) 
+      navigate(from) 
     }
     const V=(id)=>{
      
@@ -278,7 +278,7 @@ useEffect(() => {
   }
   const deletcom=(id)=>{
     if (user==null) {
-      history.replace(from) 
+      navigate(from) 
       return
     }
     axios.delete('/api/commentaire/delete_comment/'+id,{ headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}` }})
@@ -289,7 +289,7 @@ useEffect(() => {
   }
   const deletrep=(id)=>{
     if (user==null) {
-      history.replace(from) 
+      navigate(from) 
       return
     }
     axios.delete('/api/reponse/delete_reponse/'+id,{ headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}` }})
@@ -304,7 +304,7 @@ useEffect(() => {
 
 const likepub=()=>{
   if (user==null) {
-    history.replace(from) 
+    navigate(from) 
     return
   }
   axios.post('/api/pub/like_pub/'+user.id +'/'+props.id,{idv:1},{ headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}` }})
@@ -317,7 +317,7 @@ document.getElementById("nblike"+props.id).lastChild.data=parseInt(document.getE
 }
 const dislikepub=()=>{
   if (user==null) {
-    history.replace(from) 
+    navigate(from) 
     return
   }
   axios.post('/api/pub/like_pub/'+user.id +'/'+props.id,{},{ headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}` }})

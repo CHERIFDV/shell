@@ -8,7 +8,7 @@ import './addclient.scss';
 import axios from'axios';
 import LoadingPage from "../../loading/LoadingPage";
 import {SettingOutlined,ExclamationCircleOutlined} from '@ant-design/icons';
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import React, { useState,useEffect } from 'react';
 const { confirm } = Modal;
 const schema = yup.object().shape({
@@ -23,7 +23,7 @@ const schema = yup.object().shape({
 });
 
 function Registerclient(props) {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { state } = props.location
   const [loading,setloading] = useState(true);
 
@@ -43,7 +43,7 @@ function Registerclient(props) {
       console.log(response)
       
     let { from } =  { from: { pathname: "./addvoiture",state:{id:response.data[0],s:state}}};
-    history.push(from); }
+    navigate(from); }
    })
    .catch(error => {
        console.log(error)
@@ -63,7 +63,7 @@ function Registerclient(props) {
       content: 'si oui clicker sur OK',
       onOk() {
        let { from } =  { from: { pathname: "./listeclient"}};
-       history.push(from); 
+       navigate(from); 
  
       },
       onCancel() {
@@ -95,7 +95,7 @@ function Registerclient(props) {
         response.data.message,
       });
       let { from } =  { from: { pathname: "./addvoiture",state:{id:response.data[0]}}};
-      history.push(from); 
+      navigate(from); 
 
 
      })

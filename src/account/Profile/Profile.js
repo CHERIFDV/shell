@@ -1,21 +1,21 @@
 import React, { useEffect,useState } from 'react';
 import { Table,Spinner } from 'reactstrap';
 import { Image} from 'antd';
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from'axios';
 import './Profile.scss';
 import {
   ToolOutlined
 } from '@ant-design/icons';
 function Profile() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const [loading,setloading] = useState(true);
   const user=JSON.parse(localStorage.getItem("user"))
   const [profile,setprofile] = useState(user);
     if (user==null) {
       let { from } = location.state || { from: { pathname: "/login" } };
-      history.replace(from); 
+      navigate(from); 
     }
 return (
 <div >

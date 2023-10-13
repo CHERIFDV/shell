@@ -197,7 +197,7 @@ const openNotificationWithIcon = (type) => {
         description:
           'Query Successfully Send',
       });
-      this.props.history.push('./');
+      this.props.navigate('./');
       
      })
        }

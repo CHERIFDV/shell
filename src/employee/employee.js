@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, Route, Redirect, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import Listereservation from'./listereservation/listevoitureres';
 import Menu1 from'./menu/menu';
@@ -43,7 +43,7 @@ const Employee=()=>{
         key={location.key || false}
         timeout={800}
         classNames="fadeScale">
-        <Switch location={location}>
+        <Routes location={location}>
           {/* employee Routes*/}  
           
            <Route exact  path="/employe/loginem" component={Login} />
@@ -79,9 +79,9 @@ const Employee=()=>{
         <Route exact  path="/employe/listev" component={Listev} />
         <Route exact  path="/employe/updateor/:id" component={Upor} /> 
         <Route exact  path="/employe/tacheorup" component={Tacheup} /> 
-            </>:<> </>:<> </>}
+            </>:null:null}
             
-            </Switch>
+            </Routes>
             </CSSTransition>
             </SwitchTransition>
    

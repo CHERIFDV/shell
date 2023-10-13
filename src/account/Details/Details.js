@@ -1,7 +1,7 @@
 import React,{ useState }from 'react';
 import LoadingPage from "../../loading/LoadingPage";
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col ,InputGroup,Button, Input } from 'reactstrap';
-import classnames from 'classnames';
+//import classnames from 'classnames';
 import {  notification,message,Upload,Image } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import './Details.scss';
@@ -111,7 +111,7 @@ function Details ()  {
       <Nav tabs>
         <NavItem>
           <NavLink
-            className={classnames({ active: activeTab === '1' })}
+           // className={classnames({ active: activeTab === '1' })}
             onClick={() => { toggle('1'); }} 
             style={{color:"black"}}
           >
@@ -121,7 +121,7 @@ function Details ()  {
 
         <NavItem>
           <NavLink
-            className={classnames({ active: activeTab === '2' })}
+           // className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
             style={{color:"black"}}
           >
@@ -131,7 +131,7 @@ function Details ()  {
         <NavItem>
           <NavLink
           style={{color:"black"}}
-            className={classnames({ active: activeTab === '3' })}
+           // className={classnames({ active: activeTab === '3' })}
             onClick={() => { toggle('3'); }}
           >
             Bio
@@ -140,7 +140,7 @@ function Details ()  {
         <NavItem>
           <NavLink
           style={{color:"black"}}
-            className={classnames({ active: activeTab === '4' })}
+          //  className={classnames({ active: activeTab === '4' })}
             onClick={() => { toggle('4'); }}
           >
             Tel

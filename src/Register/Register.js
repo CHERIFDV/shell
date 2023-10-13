@@ -8,7 +8,7 @@ import {SecurityScanOutlined,EyeOutlined,EyeInvisibleOutlined } from '@ant-desig
 import './Register.scss';
 import { useState } from 'react';
 import axios from'axios';
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const schema = yup.object().shape({
   firstName: yup.string().required().matches(
@@ -36,7 +36,7 @@ function Register() {
   const [loading,setloading]=useState(false);
   const [afpassword,setafpassword]=useState('password');
   const [icons,seticon]=useState(<EyeOutlined/>);
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const changpass=()=>{
     if(afpassword==="password"){
@@ -59,7 +59,7 @@ function Register() {
         setloading(false)
         resetForm({values:""})
         let { from } = location.state || { from: { pathname: "/login" } };
-        history.replace(from); 
+        //navigate(from); 
      })
      .catch(error => {
          console.log(error)

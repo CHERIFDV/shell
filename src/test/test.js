@@ -4,7 +4,7 @@ import React,{ useState } from 'react';
 import Webcam from "react-webcam";
 import axios from'axios';
 import LoadingPage from "../../loading/LoadingPage";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 import { Select } from 'antd';
@@ -17,7 +17,7 @@ const { Option } = Select;
 
 
 function Photo(props) {
-  const history = useHistory();
+  const navigate = useNavigate();
  const { state } = props.location
   const [loading,setloading]=useState(false);
 
@@ -121,7 +121,7 @@ function Photo(props) {
     .then(response => { 
       setloading(false)
      let { from } = { from: { pathname: "./tache",state:state}};
-       history.push(from); 
+       navigate(from); 
    })
    .catch(error => {
        console.log(error)

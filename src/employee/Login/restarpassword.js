@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { InputGroup,Button, Input  } from 'reactstrap';
 import LoadingPage from "../../loading/LoadingPage";
 import {  notification } from 'antd';
-import {  useHistory, useLocation } from "react-router-dom";
+import {  useNavigate, useLocation } from "react-router-dom";
 import axios from'axios';
 function Password (props) {
     
@@ -14,7 +14,7 @@ function Password (props) {
     
   }
   let location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   let { from } = location.state || { from: { pathname: "/employe/loginem" } };
     const handleSubmit= (e) =>{
       if (state.code==""||state.npassword==""||state.apassword=="") {
@@ -43,7 +43,7 @@ function Password (props) {
             response.data.message,
         });
         if(response.data.status){
-          history.push(from);
+          navigate(from);
         }
       })
       .catch(error => {

@@ -5,7 +5,7 @@ import { Table } from 'reactstrap';
 import LoadingPage from "../../loading/LoadingPage";
 import { SettingOutlined } from '@ant-design/icons';
 import { Select ,InputNumber,notification,Modal} from 'antd';
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {ExclamationCircleOutlined} from '@ant-design/icons';
 import {MinusCircleOutlined,EditOutlined } from '@ant-design/icons';
 import './tache.scss';
@@ -284,7 +284,7 @@ componentDidMount() {
         description:
           'Query Successfully Send',
       });
-      this.props.history.push('./');
+      this.props.navigate('./');
       
      })
        }

@@ -5,7 +5,7 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import {  notification,Modal,Input,Image} from 'antd';
 import { Link } from "react-router-dom";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {UserOutlined,SecurityScanOutlined,EyeOutlined,EyeInvisibleOutlined} from '@ant-design/icons';
 import './Login.scss';
 import axios from'axios';
@@ -31,7 +31,7 @@ function Login() {
     
 
   }
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
 
     const emp=JSON.parse(localStorage.getItem("emp"))
@@ -110,7 +110,7 @@ if (document.getElementById("inputemailv").validity.valid) {
             localStorage.setItem("tokenemp",JSON.stringify(response.data.token));
             localStorage.setItem("emp",JSON.stringify(response.data.data));
             let { from } = location.state || { from: { pathname: "/employe" } };
-            history.replace(from); 
+            //navigate(from); 
           }else{
             notification[response.data.type]({
               message: 'Warning',

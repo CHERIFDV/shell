@@ -18,8 +18,8 @@ import {
   DropdownItem,
   
 } from 'reactstrap';
-import { Switch, Route, Redirect, useLocation } from "react-router-dom";
-import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 import Ajoutproduit from'../stock/ajoutproduit';
 import Liste from'../stock/listeproduit';
 import MRegister from'../stock/modifyprod';
@@ -134,7 +134,7 @@ const  Navbar =()=> {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          <Header className="l1" className="site-layout-background" style={{ padding: 0 }} >
+          <Header className="l1 site-layout-background" style={{ padding: 0 }} >
           <UncontrolledDropdown className="accounticone" >
             <DropdownToggle nav caret>
               <UserOutlined />
@@ -168,12 +168,11 @@ const  Navbar =()=> {
             </UncontrolledDropdown>
           </Header>
           <Content  style={{  }}>
-          <SwitchTransition>
       <CSSTransition
         key={location.key || false}
         timeout={800}
         classNames="fadeScale">
-        <Switch location={location}>
+        <Routes location={location}>
             <Route exact  path="/admin/Ajoute" component={Ajoutproduit} />
             <Route exact  path="/admin/Listeproduit" component={Liste} />
             <Route  path="/admin/Modifier/:id" component={MRegister} />
@@ -202,10 +201,10 @@ const  Navbar =()=> {
             <Route exact path="/admin/chatinbox"component={Inbox}/>
             <Route exact path="/admin/messages/:id" component={Chat}/>
          
-            <Redirect to="/404" />
-            </Switch>
+            {//<Navigate to="/404" />
+            }
+            </Routes>
             </CSSTransition>
-            </SwitchTransition>
             </Content>
             <Footer style={{ textAlign: 'center' }}></Footer>
             </Layout>

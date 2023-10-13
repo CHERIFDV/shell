@@ -14,18 +14,18 @@ import {
     DropdownMenu,
     DropdownItem, 
   } from 'reactstrap';
-  import {  useHistory, useLocation } from "react-router-dom";
+  import {  useNavigate, useLocation } from "react-router-dom";
   import { Link } from "react-router-dom";
   
 function Menu1 (){
   const emp=JSON.parse(localStorage.getItem("emp"))
   let location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   let { from } = location.state || { from: { pathname: "/employe/loginem" } };
 useEffect(() => {
   const emp=JSON.parse(localStorage.getItem("emp"))
   if (!emp) {
-    history.push(from);
+    navigate(from);
   }
   return () => {
    

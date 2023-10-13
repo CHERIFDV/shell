@@ -3,7 +3,7 @@
 import { Button,Form,InputGroup } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import './addvoiture.scss';
 import LoadingPage from "../../loading/LoadingPage";
 import React,{ useState,useEffect } from 'react';
@@ -38,7 +38,7 @@ const schema = yup.object().shape({
 
 
 function ORvoiture(props) {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const { state } = props.location;
   const [loading,setloading]=useState(false);
@@ -101,7 +101,7 @@ function ORvoiture(props) {
         feux_AVG:value.FAVG,
         feux_ARD:value.FARD,
         feux_ARG:value.FARG}}};
-       history.push(from); 
+       navigate(from); 
      })
      .catch(error => {
          console.log(error)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { Row, Col, Collapse, Spinner, Alert, Badge } from "reactstrap";
 import firebase from "../firebase.config";
 import audio from './echoed-ding-459.mp3';
@@ -13,7 +13,7 @@ function Chatbox() {
   const [loading, setLoading] = useState(true);
   const [sendMsgError, setSendMsgError] = useState("");
   const [error, setError] = useState("");
-  const [redirect, setRedirect] = useState({
+  const [Navigate, setNavigate] = useState({
     message: "",
     path: "",
     valid: false,
@@ -130,12 +130,12 @@ function Chatbox() {
     }, 500);
     // eslint-disable-next-line
   }, []);
-  if (redirect.valid === true) {
+  if (Navigate.valid === true) {
     return (
-      <Redirect
+      <Navigate
         to={{
-          pathname: redirect.path,
-          state: { message: redirect.message, path: "/" },
+          pathname: Navigate.path,
+          state: { message: Navigate.message, path: "/" },
         }}
       />
     );

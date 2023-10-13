@@ -19,20 +19,20 @@ import {
   CopyOutlined
   
 } from '@ant-design/icons'
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './account.scss';
 
 const { SubMenu } = Menu;
 function Account() 
 { 
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   console.log(localStorage.getItem("user"))
   const widthw=window.innerWidth;
     if (JSON.parse(localStorage.getItem("user"))==null) {
       let { from } = location.state || { from: { pathname: "/login" } };
-      history.replace(from); 
+      navigate(from); 
       }
          return(
    <div className="account">

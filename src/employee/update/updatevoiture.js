@@ -8,7 +8,7 @@ import * as yup from "yup";
 import './addvoiture.scss';
 import axios from'axios';
 import { format } from 'date-fns';
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import LoadingPage from "../../loading/LoadingPage";
 const voiture = yup.object().shape({
   marque: yup.string().required(),
@@ -23,7 +23,7 @@ const voiture = yup.object().shape({
 
 
 function Register(props) {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const [date,setdate]=useState('');
   const [loading,setloading]=useState(false);
@@ -63,7 +63,7 @@ function Register(props) {
         setloading(false)
         resetForm({values:""})
        let { from } =  { from: { pathname: "../"}};
-       history.push(from); 
+       navigate(from); 
      })
      .catch(error => {
          console.log(error)

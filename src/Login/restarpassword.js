@@ -6,7 +6,7 @@ import LoadingPage from "./../loading/LoadingPage";
 import {  notification } from 'antd';
 import {SecurityScanOutlined,EyeOutlined,EyeInvisibleOutlined } from '@ant-design/icons';
 import axios from'axios';
-import {  useHistory, useLocation } from "react-router-dom";
+import {  useNavigate, useLocation } from "react-router-dom";
 
 const schema = yup.object().shape({
   code: yup.string() .required('Please Enter your password')
@@ -30,7 +30,7 @@ function Password (props) {
     
   const [loading,setloading]=useState(false);
   let location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   let { from } = location.state || { from: { pathname: "/login" } };
   const [afpassword,setafpassword]=useState('password');
   const [icons,seticon]=useState(<EyeOutlined/>);
@@ -79,9 +79,9 @@ function Password (props) {
                  description:
                    response.data.message,
                });
-               history.push(from);  
+               navigate(from);  
                if(response.data.status){
-                 history.push(from);
+                 navigate(from);
                }
            
              })

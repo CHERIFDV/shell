@@ -4,13 +4,13 @@ import React,{ useState } from 'react';
 import Webcam from "react-webcam";
 import axios from'axios';
 import LoadingPage from "../../loading/LoadingPage";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { UploadOutlined  } from '@ant-design/icons';
 import { Select } from 'antd';
 
 function Photo(props) {
-  const history = useHistory();
+  const navigate = useNavigate();
  const { state } = props.location
   const [loading,setloading]=useState(false);
   const [photo1,setphoto1]=useState();
@@ -147,7 +147,7 @@ const handleChangep4=(e) =>{
     .then(response => { 
       setloading(false)
      let { from } = { from: { pathname: "./tache",state:state}};
-       history.push(from); 
+       navigate(from); 
    })
    .catch(error => {
        console.log(error)

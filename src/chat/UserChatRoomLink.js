@@ -1,12 +1,12 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UserLogo from "./avatar.svg";
 import {  Badge } from "reactstrap";
 import "./UserChatRoom.scss";
 
 export default function UserChatRoomLink(props) {
-  let history = useHistory();
-  const handleOnClick = () => history.push("/admin/messages/" + props.roomId);
+  let navigate = useNavigate();
+  const handleOnClick = () => navigate("/admin/messages/" + props.roomId);
 
   return (
     <>
