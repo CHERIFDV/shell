@@ -1,4 +1,4 @@
-import { Button,Form,Card,InputGroup } from 'react-bootstrap';
+import { Button,form,Card,div } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import { SettingOutlined } from '@ant-design/icons';
@@ -116,12 +116,12 @@ const antIcon = <SettingOutlined style={{ fontSize: 54 ,color:"gold"}}  spin />;
         errors,
       }) => (
         <Space size={[18, 16]} wrap>
-        <Form className="ajoute" noValidate onSubmit={handleSubmit}>
+        <form className="ajoute" noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Titre</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>Titre</span>
+              <input
                 type="text"
                 name="Titre"
                 value={values.Titre}
@@ -129,17 +129,17 @@ const antIcon = <SettingOutlined style={{ fontSize: 54 ,color:"gold"}}  spin />;
                 isValid={touched.Titre && !errors.Titre}
                 isInvalid={touched.Titre && !!errors.Titre}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.Titre}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>PRIX</Form.Label>
-              <InputGroup hasValidation>
+                </p>
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>PRIX</span>
+              <div hasValidation>
                
 
 
-                <Form.Control
+                <input
                   type="number"
                   placeholder="Prix"
                   aria-describedby="inputGroupPrepend"
@@ -149,17 +149,17 @@ const antIcon = <SettingOutlined style={{ fontSize: 54 ,color:"gold"}}  spin />;
                   isValid={touched.Prix && !errors.Prix}
                   isInvalid={touched.Prix && !!errors.Prix}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.Prix}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>TVA</Form.Label>
-              <InputGroup hasValidation>
-                <InputGroup.Prepend>
-                </InputGroup.Prepend>
-                <Form.Control
+                </p>
+              </div>
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>TVA</span>
+              <div hasValidation>
+                <div>
+                </div>
+                <input
                   type="number"
                   placeholder="TVA"
                   aria-describedby="inputGroupPrepend"
@@ -169,16 +169,16 @@ const antIcon = <SettingOutlined style={{ fontSize: 54 ,color:"gold"}}  spin />;
                   isValid={touched.Tva && !errors.Tva}
                   isInvalid={touched.Tva && !!errors.Tva}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.Tva}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-          </Form.Row>
+                </p>
+              </div>
+            </div>
+          </div>
          
        
 
-          <Form.Group>
+          <div>
             
           
           <Upload 
@@ -188,12 +188,12 @@ const antIcon = <SettingOutlined style={{ fontSize: 54 ,color:"gold"}}  spin />;
           <Button icon={<UploadOutlined />}>selectionner une image</Button>
         </Upload>
            
-          </Form.Group>
+          </div>
           <Button type="submit">Envoyer</Button>
   
          
           
-        </Form>
+        </form>
         <div className="affiche">
 
             <Card style={{ width: '15rem' }}>

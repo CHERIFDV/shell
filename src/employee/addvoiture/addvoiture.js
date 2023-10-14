@@ -1,6 +1,6 @@
 
 
-import { Button,Form,InputGroup } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 import { DatePicker } from 'antd';
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -91,12 +91,12 @@ const [loading,setloading]=useState(false);
         errors,
       }) => (
    
-        <Form className="addvoitur" noValidate onSubmit={handleSubmit}>
+        <form className="addvoitur" noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Marque</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>Marque</span>
+              <input
                 type="text"
                 name="marque"
                 value={values.marque}
@@ -105,10 +105,10 @@ const [loading,setloading]=useState(false);
                 isInvalid={touched.marque && !!errors.marque}
               />
               
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Modele</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Modele</span>
+              <input
                 type="text"
                 name="model"
                 value={values.model}
@@ -118,10 +118,10 @@ const [loading,setloading]=useState(false);
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Version</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Version</span>
+              <input
                 type="text"
                 name="version"
                 value={values.version}
@@ -131,10 +131,10 @@ const [loading,setloading]=useState(false);
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Type</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Type</span>
+              <input
                 type="text"
                 name="type"
                 value={values.type}
@@ -144,9 +144,9 @@ const [loading,setloading]=useState(false);
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>date_1_er_mise_en_circulation:</Form.Label>
+            </div>
+            <div controlId="validationFormik102">
+              <span>date_1_er_mise_en_circulation:</span>
               <DatePicker
               name="date_1_er_mise_en_circulation"
               onChange={date => setdate(date._d)}
@@ -154,10 +154,10 @@ const [loading,setloading]=useState(false);
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>N de Serie</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>N de Serie</span>
+              <input
                 type="text"
                 name="nserie"
                 value={values.nserie}
@@ -167,12 +167,12 @@ const [loading,setloading]=useState(false);
               />
 
              
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>N° D’IMMATRICULATION :</Form.Label>
-              <InputGroup hasValidation>
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>N° D’IMMATRICULATION :</span>
+              <div hasValidation>
               
-                <Form.Control
+                <input
                   type="text"
                   placeholder="Matricule"
                   aria-describedby="inputGroupPrepend"
@@ -182,17 +182,17 @@ const [loading,setloading]=useState(false);
                   isValid={touched.matricule && !errors.matricule}
                   isInvalid={touched.matricule && !!errors.matricule}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.matricule}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
+                </p>
+              </div>
+            </div>
 
 
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>CODE DÉMARRAGE :</Form.Label>
-              <InputGroup hasValidation>
-                <Form.Control
+            <div  controlId="validationFormikUsername2">
+              <span>CODE DÉMARRAGE :</span>
+              <div hasValidation>
+                <input
                   type="text"
                   placeholder="Model"
                   aria-describedby="inputGroupPrepend"
@@ -202,17 +202,17 @@ const [loading,setloading]=useState(false);
                   isValid={touched.codedemarage && !errors.codedemarage}
                   isInvalid={touched.codedemarage && !!errors.codedemarage}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.codedemarage}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
+                </p>
+              </div>
+            </div>
 
-          </Form.Row>
-          <Form.Row>
-          <Form.Group  controlId="validationFormik103">
-              <Form.Label>ANTIVOL DE ROUES :</Form.Label>
-              <Form.Control
+          </div>
+          <div>
+          <div  controlId="validationFormik103">
+              <span>ANTIVOL DE ROUES :</span>
+              <input
                 type="number"
                 placeholder="ANTIVOL DE ROUES "
                 name="antivolderoues"
@@ -224,12 +224,12 @@ const [loading,setloading]=useState(false);
               />
 
           
-            </Form.Group>
+            </div>
           
                 
-          </Form.Row>
+          </div>
           <Button type="submit">Envoyer</Button>
-        </Form>
+        </form>
       )}
     </Formik></>
   );

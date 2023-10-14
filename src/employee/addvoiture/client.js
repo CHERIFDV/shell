@@ -1,6 +1,6 @@
 
 
-import { Button,Form,InputGroup } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import {Space ,notification,Spin,Modal } from 'antd';
@@ -127,12 +127,12 @@ function Registerclient(props) {
         errors,
       }) => (
         <Space size={[18, 16]} wrap>
-        <Form className="ajouteclient" noValidate onSubmit={handleSubmit}>
+        <form className="ajouteclient" noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>NOM</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>NOM</span>
+              <input
                 type="text"
                 name="nom"
                 value={values.nom}
@@ -140,13 +140,13 @@ function Registerclient(props) {
                 isValid={touched.nom && !errors.nom}
                 isInvalid={touched.nom && !!errors.nom}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.nom}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Prenom</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>Prenom</span>
+              <input
                 type="text"
                 name="prenom"
                 value={values.prenom}
@@ -154,14 +154,14 @@ function Registerclient(props) {
                 isValid={touched.prenom && !errors.prenom}
                 isInvalid={touched.prenom && !!errors.prenom}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.prenom}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>CIN</Form.Label>
-              <InputGroup hasValidation>
-                <Form.Control
+                </p>
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>CIN</span>
+              <div hasValidation>
+                <input
                   type="number"
                   placeholder="CIN"
                   aria-describedby="inputGroupPrepend"
@@ -171,17 +171,17 @@ function Registerclient(props) {
                   isValid={touched.cin && !errors.cin}
                   isInvalid={touched.cin && !!errors.cin}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.cin}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>TEL</Form.Label>
-              <InputGroup hasValidation>
-                <InputGroup.Prepend>
-                </InputGroup.Prepend>
-                <Form.Control
+                </p>
+              </div>
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>TEL</span>
+              <div hasValidation>
+                <div>
+                </div>
+                <input
                   type="number"
                   placeholder="tel"
                   aria-describedby="inputGroupPrepend"
@@ -191,26 +191,26 @@ function Registerclient(props) {
                   isValid={touched.tel && !errors.tel}
                   isInvalid={touched.tel && !!errors.tel}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.tel}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-          </Form.Row>
+                </p>
+              </div>
+            </div>
+          </div>
          
        
 
-          <Form.Group>
+          <div>
             
           
         
            
-          </Form.Group>
+          </div>
           <Button type="submit">Envoyer</Button>
   
          
           
-        </Form>
+        </form>
       </Space>
 
       )}

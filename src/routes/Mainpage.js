@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import RoutesApp from "./routes";
 import Navbar from "../Navbar/Navbar";
 import Navbara from "../Admin/Navbar";
-import Login from "../Login/Login"
+import Login from "../Login/Login";
 import Photo from "../employee/addvoiture/photo";
 import Employee from "../employee/employee";
 import axios from "axios";
@@ -71,14 +71,14 @@ export default function MainInterface(props) {
   const path = useLocation();
   return (
     <>
-      {
+   {
         path.pathname.includes("/employe") ? (
           <Employee />
         ) : path.pathname === "/404" || path.pathname === "/login" ? (
-          <Login/>
+          <Login />
         ) : path.pathname.includes("/admin") ? (
           <>
-            {user == null || user.role_as !== "admin" ? (
+            {user == null && user.role_as !== "admin" ? (
               navigate(from)
             ) : (
               <Navbara />

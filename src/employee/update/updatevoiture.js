@@ -1,6 +1,6 @@
 
 import React,{ useState,useEffect } from 'react';
-import { Button,Form,InputGroup } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 import { DatePicker } from 'antd';
 import { Formik } from "formik";
 import moment from 'moment';
@@ -93,12 +93,12 @@ function Register(props) {
         errors,
       }) => (
    
-        <Form className="addvoitur" noValidate onSubmit={handleSubmit}>
+        <form className="addvoitur" noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Marque</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>Marque</span>
+              <input
                 type="text"
                 name="marque"
                 value={values.marque}
@@ -107,10 +107,10 @@ function Register(props) {
                 isInvalid={touched.marque && !!errors.marque}
               />
               
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Model</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Model</span>
+              <input
                 type="text"
                 name="model"
                 value={values.model}
@@ -120,10 +120,10 @@ function Register(props) {
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Version</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Version</span>
+              <input
                 type="text"
                 name="version"
                 value={values.version}
@@ -133,10 +133,10 @@ function Register(props) {
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Type</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Type</span>
+              <input
                 type="text"
                 name="type"
                 value={values.type}
@@ -146,9 +146,9 @@ function Register(props) {
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>date_1_er_mise_en_circulation:</Form.Label>
+            </div>
+            <div controlId="validationFormik102">
+              <span>date_1_er_mise_en_circulation:</span>
               <DatePicker
               name="date_1_er_mise_en_circulation"
               defaultValue={moment(data.date_1_er_mise_en_circulation, 'YYYY/MM/DD')}
@@ -157,10 +157,10 @@ function Register(props) {
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>N de Serie</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>N de Serie</span>
+              <input
                 type="text"
                 name="nserie"
                 value={values.nserie}
@@ -170,12 +170,12 @@ function Register(props) {
               />
 
              
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>N° D’IMMATRICULATION :</Form.Label>
-              <InputGroup hasValidation>
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>N° D’IMMATRICULATION :</span>
+              <div hasValidation>
               
-                <Form.Control
+                <input
                   type="text"
                   placeholder="Matricule"
                   aria-describedby="inputGroupPrepend"
@@ -185,17 +185,17 @@ function Register(props) {
                   isValid={touched.matricule && !errors.matricule}
                   isInvalid={touched.matricule && !!errors.matricule}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.matricule}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
+                </p>
+              </div>
+            </div>
 
 
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>CODE DÉMARRAGE :</Form.Label>
-              <InputGroup hasValidation>
-                <Form.Control
+            <div  controlId="validationFormikUsername2">
+              <span>CODE DÉMARRAGE :</span>
+              <div hasValidation>
+                <input
                   type="text"
                   placeholder="Model"
                   aria-describedby="inputGroupPrepend"
@@ -205,17 +205,17 @@ function Register(props) {
                   isValid={touched.codedemarage && !errors.codedemarage}
                   isInvalid={touched.codedemarage && !!errors.codedemarage}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.codedemarage}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
+                </p>
+              </div>
+            </div>
 
-          </Form.Row>
-          <Form.Row>
-          <Form.Group  controlId="validationFormik103">
-              <Form.Label>ANTIVOL DE ROUES :</Form.Label>
-              <Form.Control
+          </div>
+          <div>
+          <div  controlId="validationFormik103">
+              <span>ANTIVOL DE ROUES :</span>
+              <input
                 type="number"
                 placeholder="ANTIVOL DE ROUES "
                 name="antivolderoues"
@@ -227,12 +227,12 @@ function Register(props) {
               />
 
           
-            </Form.Group>
+            </div>
           
                 
-          </Form.Row>
+          </div>
           <Button type="submit">Envoyer</Button>
-        </Form>
+        </form>
       )}
     </Formik></div>}</div>
   );

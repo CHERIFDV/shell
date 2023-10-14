@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button, Form, InputGroup } from "react-bootstrap";
+import { Button, form, div } from "react-bootstrap";
 import { Formik } from "formik";
 import * as yup from "yup";
 import LoadingPage from "../loading/LoadingPage";
@@ -114,7 +114,7 @@ function Login() {
       },
     });
   };
-
+  console.log(localStorage.getItem("user"))
   const [loading, setloading] = useState(false);
   return (
     <>
@@ -167,7 +167,7 @@ function Login() {
           isValid,
           errors,
         }) => (
-          <div noValidate className="Login" onSubmit={handleSubmit}>
+          <form noValidate className="Login" onSubmit={handleSubmit}>
             <div className="logo">
               <Image width={"100%"} src={logo} />
             </div>
@@ -240,7 +240,7 @@ function Login() {
                 Mot de pass oublier
               </Link>
             </div>
-          </div>
+          </form>
         )}
       </Formik>
     </>

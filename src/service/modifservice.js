@@ -1,6 +1,6 @@
 
 
-import { Button,Form,InputGroup } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import { message,Space ,Image,Upload} from 'antd';
@@ -123,12 +123,12 @@ function Modifservice(props) {
         errors,
       }) => (
         <Space size={[18, 16]} wrap>
-        <Form className="ajoute" noValidate onSubmit={handleSubmit}>
+        <form className="ajoute" noValidate onSubmit={handleSubmit}>
         
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Titre</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>Titre</span>
+              <input
                 type="text"
                 name="Titre"
                 value={values.Titre}
@@ -136,20 +136,20 @@ function Modifservice(props) {
                 isValid={touched.Titre && !errors.Titre}
                 isInvalid={touched.Titre && !!errors.Titre}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.Titre}
-                </Form.Control.Feedback>
-            </Form.Group>
+                </p>
+            </div>
     
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>Description</Form.Label>
-              <InputGroup hasValidation>
+            <div  controlId="validationFormikUsername2">
+              <span>Description</span>
+              <div hasValidation>
                
                
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.description}
-                </Form.Control.Feedback>
-              </InputGroup>
+                </p>
+              </div>
               <textarea
                   type="text"
                   placeholder="description"
@@ -160,12 +160,12 @@ function Modifservice(props) {
                   isValid={touched.description && !errors.description}
                   isInvalid={touched.description && !!errors.description}
                 />
-            </Form.Group>
-          </Form.Row>
+            </div>
+          </div>
          
        
 
-          <Form.Group>
+          <div>
             
           
           <Upload 
@@ -176,12 +176,12 @@ function Modifservice(props) {
           <Button icon={<UploadOutlined />}>selectionner une image</Button>
         </Upload>
            
-          </Form.Group>
+          </div>
           <Button type="submit">Envoyer</Button>
   
          
           
-        </Form>
+        </form>
        
       </Space>
 

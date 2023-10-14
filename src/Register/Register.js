@@ -1,6 +1,6 @@
 
 
-import { Button,Form,InputGroup } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import LoadingPage from "../loading/LoadingPage";
@@ -95,12 +95,12 @@ function Register() {
         errors,
       }) => (
    
-        <Form className="Register" noValidate onSubmit={handleSubmit}>
+        <form className="Register" noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>First name</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>First name</span>
+              <input
                 type="text"
                 name="firstName"
                 value={values.firstName}
@@ -109,10 +109,10 @@ function Register() {
                 isInvalid={touched.firstName && !!errors.firstName}
               />
               
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Last name</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Last name</span>
+              <input
                 type="text"
                 name="lastName"
                 value={values.lastName}
@@ -122,14 +122,14 @@ function Register() {
               />
 
              
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>Email</Form.Label>
-              <InputGroup hasValidation>
-                <InputGroup.Prepend>
-                  <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                </InputGroup.Prepend>
-                <Form.Control
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>Email</span>
+              <div hasValidation>
+                <div>
+                  <span id="inputGroupPrepend">@</span>
+                </div>
+                <input
                   type="text"
                   placeholder="Email"
                   aria-describedby="inputGroupPrepend"
@@ -139,18 +139,18 @@ function Register() {
                   isValid={touched.username && !errors.username}
                   isInvalid={touched.username && !!errors.username}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.username}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>Password</Form.Label>
-              <InputGroup hasValidation>
-                <InputGroup.Prepend>
-                  <InputGroup.Text id="inputGroupPrepend"><SecurityScanOutlined /></InputGroup.Text>
-                </InputGroup.Prepend>
-                <Form.Control
+                </p>
+              </div>
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>Password</span>
+              <div hasValidation>
+                <div>
+                  <span id="inputGroupPrepend"><SecurityScanOutlined /></span>
+                </div>
+                <input
                   type={afpassword}
                   placeholder="Password"
                   aria-describedby="inputGroupPrepend"
@@ -160,21 +160,21 @@ function Register() {
                   isValid={touched.Password && !errors.Password}
                   isInvalid={touched.Password && !!errors.Password}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.Password}
-                </Form.Control.Feedback>
-                <InputGroup.Prepend>
-                  <InputGroup.Text id="inputGroupPrepend" onClick={changpass}>{icons}</InputGroup.Text>
-                </InputGroup.Prepend>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>Password</Form.Label>
-              <InputGroup hasValidation>
-                <InputGroup.Prepend>
-                  <InputGroup.Text id="inputGroupPrepend"><SecurityScanOutlined /></InputGroup.Text>
-                </InputGroup.Prepend>
-                <Form.Control
+                </p>
+                <div>
+                  <span id="inputGroupPrepend" onClick={changpass}>{icons}</span>
+                </div>
+              </div>
+            </div>
+            <div  controlId="validationFormikUsername2">
+              <span>Password</span>
+              <div hasValidation>
+                <div>
+                  <span id="inputGroupPrepend"><SecurityScanOutlined /></span>
+                </div>
+                <input
                   type={afpassword}
                   placeholder="Password"
                   aria-describedby="inputGroupPrepend"
@@ -184,19 +184,19 @@ function Register() {
                   isValid={touched.Password1 && !errors.Password1}
                   isInvalid={touched.Password1 && !!errors.Password1}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.Password1}
-                </Form.Control.Feedback>
+                </p>
                 
-              </InputGroup>
+              </div>
               
               
-            </Form.Group>
-          </Form.Row>
-          <Form.Row>
-          <Form.Group  controlId="validationFormik103">
-              <Form.Label>Cin</Form.Label>
-              <Form.Control
+            </div>
+          </div>
+          <div>
+          <div  controlId="validationFormik103">
+              <span>Cin</span>
+              <input
                 type="number"
                 placeholder="Cin"
                 name="cin"
@@ -208,10 +208,10 @@ function Register() {
               />
 
           
-            </Form.Group>
-            <Form.Group  controlId="validationFormik103">
-              <Form.Label>Tel</Form.Label>
-              <Form.Control
+            </div>
+            <div  controlId="validationFormik103">
+              <span>Tel</span>
+              <input
                 type="number"
                 placeholder="Tel"
                 name="tel"
@@ -223,10 +223,10 @@ function Register() {
               />
 
           
-            </Form.Group>
-            <Form.Group  controlId="validationFormik103">
-              <Form.Label>City</Form.Label>
-              <Form.Control
+            </div>
+            <div  controlId="validationFormik103">
+              <span>City</span>
+              <input
                 type="text"
                 placeholder="City"
                 name="city"
@@ -238,10 +238,10 @@ function Register() {
               />
 
           
-            </Form.Group>
-            <Form.Group  controlId="validationFormik104">
-              <Form.Label>State</Form.Label>
-              <Form.Control
+            </div>
+            <div  controlId="validationFormik104">
+              <span>State</span>
+              <input
                 type="text"
                 placeholder="State"
                 name="state"
@@ -252,10 +252,10 @@ function Register() {
                 isInvalid={touched.state && !!errors.state}
               />
              
-            </Form.Group>
-            <Form.Group  controlId="validationFormik105">
-              <Form.Label>Zip</Form.Label>
-              <Form.Control
+            </div>
+            <div  controlId="validationFormik105">
+              <span>Zip</span>
+              <input
                 type="text"
                 placeholder="Zip"
                 name="zip"
@@ -267,13 +267,13 @@ function Register() {
               />
 
               
-            </Form.Group>
-          </Form.Row>
+            </div>
+          </div>
 
          
 
-          <Form.Group>
-            <Form.Check
+          {/* <div>
+            <div
               required
               name="terms"
               label="Agree to terms and conditions"
@@ -284,12 +284,12 @@ function Register() {
               id="validationFormik106"
               feedbackTooltip
             />
-          </Form.Group>
+          </div> */}
           <Button type="submit">Envoyer</Button>
   
          
           
-        </Form>
+        </form>
     
 
       )}

@@ -1,6 +1,6 @@
 import React,{ useState }from 'react';
 import LoadingPage from "../../loading/LoadingPage";
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col ,InputGroup,Button, Input } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col ,div,Button, Input } from 'reactstrap';
 //import classnames from 'classnames';
 import {  notification,message,Upload,Image } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
@@ -157,21 +157,21 @@ function Details ()  {
             <Col sm="12">
             <div className="Details">
       <div className="divtoast" >{toast}</div>
-      <InputGroup>
+      <div>
         <Input  type="textarea" className="dinput" name="city"  value={state.city} onChange={handleChange} placeholder="ville" />
-      </InputGroup>
+      </div>
       <br />
-      <InputGroup>
+      <div>
         <Input  type="textarea" className="dinput" name="state"  value={state.state} onChange={handleChange} placeholder="Gouvernement" />
-      </InputGroup>
+      </div>
       <br />
-      <InputGroup>
+      <div>
         <Input  type="textarea" className="dinput" name="zip"  value={state.zip} onChange={handleChange} placeholder="Code postal" />
-      </InputGroup>
+      </div>
       <br />
-      <InputGroup>
+      <div>
         <Input className="dinput" name="current_password" type="password" onChange={handleChange} value={state.current_password} placeholder="Mot de passe" />
-      </InputGroup>
+      </div>
       <br/>
      
       <Button className="dbuton" value="editaddress"  onClick={handleSubmit}>Valider</Button>{' '}
@@ -198,13 +198,13 @@ function Details ()  {
             <Col >
             <div className="Details">
       <div className="divtoast" >{toast}</div>
-            <InputGroup>
+            <div>
         <Input  type="textarea" className="dinput" name="bio"  value={state.bio} onChange={handleChange} placeholder="Bio" />
-      </InputGroup>
+      </div>
       <br />
-      <InputGroup>
+      <div>
         <Input className="dinput" name="current_password" type="password" onChange={handleChange} value={state.current_password} placeholder="Mot de passe" />
-      </InputGroup>
+      </div>
       <br/>
      
       <Button className="dbuton" value="bio" onClick={handleSubmit}>Valider</Button>
@@ -217,13 +217,13 @@ function Details ()  {
             <Col >
             <div className="Details">
            <div className="divtoast" >{toast}</div>
-            <InputGroup>
+            <div>
         <Input  type="number" className="dinput" name="tel"  value={state.tel} onChange={handleChange} placeholder="tel" />
-        </InputGroup>
+        </div>
         <br />
-        <InputGroup>
+        <div>
         <Input className="dinput" name="current_password" type="password"  onChange={handleChange} value={state.current_password} placeholder="Mot de passe" />
-         </InputGroup>
+         </div>
         <br/>
      
          <Button className="dbuton" value="phone"  onClick={handleSubmit}>Valider</Button>

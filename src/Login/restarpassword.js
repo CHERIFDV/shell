@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button,Form,InputGroup } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import LoadingPage from "./../loading/LoadingPage";
@@ -107,15 +107,15 @@ function Password (props) {
           isValid,
           errors,
         }) => (
-          <Form className="Register" noValidate onSubmit={handleSubmit}>
-            <Form.Row>
-            <Form.Group  controlId="validationFormikUsername2">
-                <Form.Label>Code</Form.Label>
-                <InputGroup hasValidation>
-                  <InputGroup.Prepend>
-                    <InputGroup.Text id="inputGroupPrepend"><SecurityScanOutlined /></InputGroup.Text>
-                  </InputGroup.Prepend>
-                  <Form.Control
+          <form className="Register" noValidate onSubmit={handleSubmit}>
+            <div>
+            <div  controlId="validationFormikUsername2">
+                <span>Code</span>
+                <div hasValidation>
+                  <div>
+                    <span id="inputGroupPrepend"><SecurityScanOutlined /></span>
+                  </div>
+                  <input
                     type="text"
                     placeholder="code"
                     aria-describedby="inputGroupPrepend"
@@ -125,19 +125,19 @@ function Password (props) {
                     isValid={touched.code && !errors.code}
                     isInvalid={touched.code && !!errors.code}
                   />
-                  <Form.Control.Feedback type="invalid" tooltip>
+                  <p type="invalid" tooltip>
                     {errors.code}
-                  </Form.Control.Feedback>
+                  </p>
 
-                </InputGroup>
-              </Form.Group>
-              <Form.Group  controlId="validationFormikUsername2">
-                <Form.Label>Password</Form.Label>
-                <InputGroup hasValidation>
-                  <InputGroup.Prepend>
-                    <InputGroup.Text id="inputGroupPrepend"><SecurityScanOutlined /></InputGroup.Text>
-                  </InputGroup.Prepend>
-                  <Form.Control
+                </div>
+              </div>
+              <div  controlId="validationFormikUsername2">
+                <span>Password</span>
+                <div hasValidation>
+                  <div>
+                    <span id="inputGroupPrepend"><SecurityScanOutlined /></span>
+                  </div>
+                  <input
                     type={afpassword}
                     placeholder="Mot de passe"
                     aria-describedby="inputGroupPrepend"
@@ -147,21 +147,21 @@ function Password (props) {
                     isValid={touched.npassword && !errors.npassword}
                     isInvalid={touched.npassword && !!errors.npassword}
                   />
-                  <Form.Control.Feedback type="invalid" tooltip>
+                  <p type="invalid" tooltip>
                     {errors.npassword}
-                  </Form.Control.Feedback>
-                  <InputGroup.Prepend>
-                    <InputGroup.Text id="inputGroupPrepend" onClick={changpass}>{icons}</InputGroup.Text>
-                  </InputGroup.Prepend>
-                </InputGroup>
-              </Form.Group>
-              <Form.Group  controlId="validationFormikUsername2">
-                <Form.Label>Password</Form.Label>
-                <InputGroup hasValidation>
-                  <InputGroup.Prepend>
-                    <InputGroup.Text id="inputGroupPrepend"><SecurityScanOutlined /></InputGroup.Text>
-                  </InputGroup.Prepend>
-                  <Form.Control
+                  </p>
+                  <div>
+                    <span id="inputGroupPrepend" onClick={changpass}>{icons}</span>
+                  </div>
+                </div>
+              </div>
+              <div  controlId="validationFormikUsername2">
+                <span>Password</span>
+                <div hasValidation>
+                  <div>
+                    <span id="inputGroupPrepend"><SecurityScanOutlined /></span>
+                  </div>
+                  <input
                     type={afpassword}
                     placeholder="Mot de passe"
                     aria-describedby="inputGroupPrepend"
@@ -171,18 +171,18 @@ function Password (props) {
                     isValid={touched.apassword && !errors.apassword}
                     isInvalid={touched.apassword && !!errors.apassword}
                   />
-                  <Form.Control.Feedback type="invalid" tooltip>
+                  <p type="invalid" tooltip>
                     {errors.apassword}
-                  </Form.Control.Feedback>
+                  </p>
                   
-                </InputGroup>
+                </div>
                 
                 
-              </Form.Group>
-            </Form.Row>
+              </div>
+            </div>
            
             <Button type="submit">Envoyer</Button>
-          </Form>
+          </form>
   
         )}
       </Formik>

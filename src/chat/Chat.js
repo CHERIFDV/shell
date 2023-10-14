@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
   Input,
-  InputGroup,
+  div,
   Button,
   Tooltip,
 } from "reactstrap";
@@ -197,7 +197,7 @@ export default () => {
           ) : (
             ""
           )}
-          <InputGroup>
+          <div>
             <Input
               placeholder="Envoyer un message"
               onChange={messageHandler}
@@ -211,7 +211,7 @@ export default () => {
             <Button color="primary" onClick={sendMessage}>
               <i className="fas fa-paper-plane"></i>
             </Button>
-          </InputGroup>
+          </div>
         </Container>
     </Container>
   );

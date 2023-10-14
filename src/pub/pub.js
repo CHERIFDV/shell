@@ -1,6 +1,6 @@
 import React,{ useEffect,useState } from 'react';
 import axios from'axios';
-import { Card, Avatar,Image,Tooltip, Form, Button, List, Input,Modal } from 'antd';
+import { Card, Avatar,Image,Tooltip, Button, List, Input,Modal } from 'antd';
 import { Comment } from'@ant-design/compatible';
 import { EditOutlined,SendOutlined, LikeOutlined,DeleteOutlined, DislikeFilled, LikeFilled,DislikeOutlined,ExclamationCircleOutlined } from '@ant-design/icons';
 import { format } from 'date-fns';
@@ -21,7 +21,7 @@ function Pub(props){
   const [nom, setnom] = useState(null);
   const Editor = ({ onChange, onSubmit, submitting, value }) => (
     <>
-      <Form.Item>
+      <form>
        
         <Input rows={4} autoFocus placeholder={!nom?"Votre Commenter":nom} className="input" onChange={onChange} value={value} />
         {window.innerWidth>=570?
@@ -29,7 +29,7 @@ function Pub(props){
         Ajouter Commentaire
         </Button>
         : <SendOutlined  htmlType="submit" loading={submitting} onClick={onSubmit} />}
-      </Form.Item>
+      </form>
     </>
   );
   const [submitting, setsubmitting] = useState(false)

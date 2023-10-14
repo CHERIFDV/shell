@@ -1,6 +1,6 @@
 
 
-import { Button,Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import { EyeOutlined,EyeInvisibleOutlined } from '@ant-design/icons';
@@ -78,12 +78,12 @@ function Register() {
         errors,
       }) => (
    
-        <Form className="reserve" noValidate onSubmit={handleSubmit}>
+        <form className="reserve" noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-          <Form.Group controlId="validationFormik102">
-              <Form.Label>Nom</Form.Label>
-              <Form.Control
+          <div>
+          <div controlId="validationFormik102">
+              <span>Nom</span>
+              <input
                 type="text"
                 name="nom"
                 value={values.nom}
@@ -93,10 +93,10 @@ function Register() {
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Prenom</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Prenom</span>
+              <input
                 type="text"
                 name="prenom"
                 value={values.prenom}
@@ -106,10 +106,10 @@ function Register() {
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Tel</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Tel</span>
+              <input
                 type="text"
                 name="tel"
                 value={values.tel}
@@ -119,10 +119,10 @@ function Register() {
               />
 
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Modele</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik101">
+              <span>Modele</span>
+              <input
                 type="text"
                 name="model"
                 value={values.model}
@@ -131,10 +131,10 @@ function Register() {
                 isInvalid={touched.model && !!errors.model}
               />
               
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Matricule</Form.Label>
-              <Form.Control
+            </div>
+            <div controlId="validationFormik102">
+              <span>Matricule</span>
+              <input
                 type="text"
                 name="matricule"
                 value={values.matricule}
@@ -143,8 +143,8 @@ function Register() {
                 isInvalid={touched.matricule && !!errors.matricule}
               />
 
-                <Form.Label>Description</Form.Label>
-            </Form.Group>
+                <span>Description</span>
+            </div>
          
             <textarea
                 type="textarea"
@@ -157,11 +157,11 @@ function Register() {
                 
               />
             
-          </Form.Row>
+          </div>
     
 
-          <Form.Group>
-            <Form.Check
+          <div>
+            <div
               required
               name="terms"
               label=" Accepter les termes et les conditions"
@@ -172,12 +172,12 @@ function Register() {
               id="validationFormik106"
               feedbackTooltip
             />
-          </Form.Group>
+          </div>
           <Button type="submit">Envoyer</Button>
   
          
           
-        </Form>
+        </form>
     
 
       )}

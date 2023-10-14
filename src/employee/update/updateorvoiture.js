@@ -1,6 +1,6 @@
 
 
-import { Button,Form,InputGroup } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -138,11 +138,11 @@ function ORvoiture(props) {
         isValid,
         errors,
       }) => (
-        <Form className="addvoitur" noValidate onSubmit={handleSubmit}>
-          <Form.Row>
-            <Form.Group  controlId="validationFormik103">
-              <Form.Label>CODE MOTEUR :</Form.Label>
-              <Form.Control
+        <form className="addvoitur" noValidate onSubmit={handleSubmit}>
+          <div>
+            <div  controlId="validationFormik103">
+              <span>CODE MOTEUR :</span>
+              <input
                 type="number"
                 placeholder="CODE MOTEUR :"
                 name="codemoteur"
@@ -151,9 +151,9 @@ function ORvoiture(props) {
                 isValid={touched.codemoteur && !errors.codemoteur}
                 isInvalid={touched.codemoteur && !!errors.codemoteur}
               />
-            </Form.Group>
-            <Form.Group  controlId="validationFormik103">
-              <Form.Label>NIVEAU DE CARBURANT :</Form.Label>
+            </div>
+            <div  controlId="validationFormik103">
+              <span>NIVEAU DE CARBURANT :</span>
               <Select
                name="niveaudecardurent"
 
@@ -174,10 +174,10 @@ function ORvoiture(props) {
                   {'required field'}
                    </div>}
            
-            </Form.Group>
+            </div>
             
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>VALIDITÉ DU CONTRÔLE TECHNIQUE:</Form.Label>
+            <div controlId="validationFormik102">
+              <span>VALIDITÉ DU CONTRÔLE TECHNIQUE:</span>
               <DatePicker
               name="validect"
               defaultValue={moment(data.validation_controle_tech, 'YYYY/MM/DD')}
@@ -186,10 +186,10 @@ function ORvoiture(props) {
               />
 
              
-            </Form.Group>
-            <Form.Group  controlId="validationFormik105">
-              <Form.Label>KM :</Form.Label>
-              <Form.Control
+            </div>
+            <div  controlId="validationFormik105">
+              <span>KM :</span>
+              <input
                 type="text"
                 placeholder="KM"
                 name="km"
@@ -199,11 +199,11 @@ function ORvoiture(props) {
                 isInvalid={touched.km && !!errors.km}
           
               />
-            </Form.Group>
+            </div>
 
-            <Form.Group  controlId="validationFormik105">
-              <Form.Label>PNEUMATIQUES</Form.Label>
-              <Form.Control
+            <div  controlId="validationFormik105">
+              <span>PNEUMATIQUES</span>
+              <input
                 type="text"
                 placeholder="AVD"
                 name="PAVD"
@@ -213,7 +213,7 @@ function ORvoiture(props) {
                 isInvalid={touched.PAVD && !!errors.PAVD}
           
               />
-               <Form.Control
+               <input
                 type="text"
                 placeholder="AVG"
                 name="PAVG"
@@ -223,7 +223,7 @@ function ORvoiture(props) {
                 isInvalid={touched.PAVG && !!errors.PAVG}
           
               />
-               <Form.Control
+               <input
                 type="text"
                 placeholder="ARD"
                 name="PARD"
@@ -233,7 +233,7 @@ function ORvoiture(props) {
                 isInvalid={touched.PARD && !!errors.PARD}
           
               />
-               <Form.Control
+               <input
                 type="text"
                 placeholder="ARG"
                 name="PARG"
@@ -243,10 +243,10 @@ function ORvoiture(props) {
                 isInvalid={touched.PARG && !!errors.PARG}
           
               />
-            </Form.Group>
-            <Form.Group  controlId="validationFormik105">
-              <Form.Label>FEUX</Form.Label>
-              <Form.Check
+            </div>
+            <div  controlId="validationFormik105">
+              <span>FEUX</span>
+              <div
               required
               label="AVD"
                 name="FAVD"
@@ -257,7 +257,7 @@ function ORvoiture(props) {
                 isInvalid={touched.FAVD && !!errors.FAVD}
           
               />
-               <Form.Check
+               <div
               required
               label="AVG"
                 name="FAVG"
@@ -268,7 +268,7 @@ function ORvoiture(props) {
                 isInvalid={touched.FAVG && !!errors.FAVG}
           
               />
-               <Form.Check
+               <div
               required
               label="ARD"
                 name="FARD"
@@ -279,7 +279,7 @@ function ORvoiture(props) {
                 isInvalid={touched.FARD && !!errors.FARD}
           
               />
-               <Form.Check
+               <div
               required
               label="ARG"
                 name="FARG"
@@ -290,12 +290,12 @@ function ORvoiture(props) {
                 isInvalid={touched.FARG && !!errors.FARG}
           
               />
-            </Form.Group>
+            </div>
 
 
-            <Form.Group  controlId="validationFormik105">
-              <Form.Label>PARE-BRISE</Form.Label>
-              <Form.Check
+            <div  controlId="validationFormik105">
+              <span>PARE-BRISE</span>
+              <div
               required
               label="FÊLURE"
                 name="FÊLURE"
@@ -306,7 +306,7 @@ function ORvoiture(props) {
                 isInvalid={touched.FÊLURE && !!errors.FÊLURE}
           
               />
-               <Form.Check
+               <div
               required
               label="CASSURE"
                 name="CASSURE"
@@ -317,7 +317,7 @@ function ORvoiture(props) {
                 isInvalid={touched.CASSURE && !!errors.CASSURE}
           
               />
-               <Form.Check
+               <div
               required
               label="ÉCLAT"
                 name="ÉCLAT"
@@ -329,10 +329,10 @@ function ORvoiture(props) {
           
               />
               
-            </Form.Group>
-            <Form.Group  controlId="validationFormik105">
-              <Form.Label>PHARE</Form.Label>
-              <Form.Check
+            </div>
+            <div  controlId="validationFormik105">
+              <span>PHARE</span>
+              <div
               required
               label="D"
                 name="D"
@@ -342,7 +342,7 @@ function ORvoiture(props) {
                 isValid={touched.D && !errors.D}
                 isInvalid={touched.D && !!errors.D}
               />
-               <Form.Check
+               <div
                 required
                 label="G"
                 name="G"
@@ -354,12 +354,12 @@ function ORvoiture(props) {
           
               />
                 
-            </Form.Group>
+            </div>
            
-          </Form.Row>
+          </div>
    
           <Button type="submit">Envoyer</Button>
-        </Form>
+        </form>
     
       )}
     </Formik></div>}</div>

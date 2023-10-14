@@ -1,6 +1,6 @@
 
 
-import { Button,Form,Card,InputGroup } from 'react-bootstrap';
+import { Button,form,Card,div } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import { notification, message,Space,Upload  } from 'antd';
@@ -128,12 +128,12 @@ function Addsociete() {
         errors,
       }) => (
         <Space size={[18, 16]} wrap>
-        <Form className="ajoute" noValidate onSubmit={handleSubmit}>
+        <form className="ajoute" noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>NOM DE SOCIETE</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>NOM DE SOCIETE</span>
+              <input
                 type="text"
                 name="nom"
                 value={values.nom}
@@ -141,13 +141,13 @@ function Addsociete() {
                 isValid={touched.nom && !errors.nom}
                 isInvalid={touched.nom && !!errors.nom}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.nom}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Address rue</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>Address rue</span>
+              <input
                 type="text"
                 name="addrue"
                 value={values.addrue}
@@ -155,13 +155,13 @@ function Addsociete() {
                 isValid={touched.addrue && !errors.addrue}
                 isInvalid={touched.addrue && !!errors.addrue}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.addrue}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Address locale</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>Address locale</span>
+              <input
                 type="text"
                 name="addloc"
                 value={values.addloc}
@@ -169,13 +169,13 @@ function Addsociete() {
                 isValid={touched.addloc && !errors.addloc}
                 isInvalid={touched.addloc && !!errors.addloc}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.addloc}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Code Postale</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>Code Postale</span>
+              <input
                 type="number"
                 name="codepostal"
                 value={values.codepostal}
@@ -183,13 +183,13 @@ function Addsociete() {
                 isValid={touched.codepostal && !errors.codepostal}
                 isInvalid={touched.codepostal && !!errors.codepostal}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.codepostal}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>GSM 1</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>GSM 1</span>
+              <input
                 type="number"
                 name="gsm1"
                 value={values.gsm1}
@@ -197,13 +197,13 @@ function Addsociete() {
                 isValid={touched.gsm1 && !errors.gsm1}
                 isInvalid={touched.gsm1 && !!errors.gsm1}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.gsm1}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>GSM 2</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>GSM 2</span>
+              <input
                 type="number"
                 name="gsm2"
                 value={values.gsm2}
@@ -211,13 +211,13 @@ function Addsociete() {
                 isValid={touched.gsm2 && !errors.gsm2}
                 isInvalid={touched.gsm2 && !!errors.gsm2}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.gsm2}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>Email</span>
+              <input
                 type="email"
                 name="email"
                 value={values.email}
@@ -225,13 +225,13 @@ function Addsociete() {
                 isValid={touched.email && !errors.email}
                 isInvalid={touched.email && !!errors.email}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.email}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>MF</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>MF</span>
+              <input
                 type="text"
                 name="mf"
                 value={values.mf}
@@ -239,13 +239,13 @@ function Addsociete() {
                 isValid={touched.mf && !errors.mf}
                 isInvalid={touched.mf && !!errors.mf}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.mf}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>RIB</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>RIB</span>
+              <input
                 type="NUMBER"
                 name="rib"
                 value={values.rib}
@@ -253,13 +253,13 @@ function Addsociete() {
                 isValid={touched.rib && !errors.rib}
                 isInvalid={touched.rib && !!errors.rib}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.rib}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Timbre</Form.Label>
-              <Form.Control
+                </p>
+            </div>
+            <div controlId="validationFormik101">
+              <span>Timbre</span>
+              <input
                 type="NUMBER"
                 name="timbre"
                 value={values.timbre}
@@ -267,15 +267,15 @@ function Addsociete() {
                 isValid={touched.timbre && !errors.timbre}
                 isInvalid={touched.timbre && !!errors.timbre}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.timbre}
-                </Form.Control.Feedback>
-            </Form.Group>
-          </Form.Row>
+                </p>
+            </div>
+          </div>
          
        
 
-          <Form.Group>
+          <div>
             
           
           <Upload 
@@ -285,12 +285,12 @@ function Addsociete() {
           <Button icon={<UploadOutlined />}>selectionner une image</Button>
         </Upload>
            
-          </Form.Group>
+          </div>
           <Button type="submit">Envoyer</Button>
   
          
           
-        </Form>
+        </form>
        
       </Space>
 

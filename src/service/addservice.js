@@ -1,6 +1,6 @@
 
 
-import { Button,Form,InputGroup } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import { notification, message,Space,Upload  } from 'antd';
@@ -107,12 +107,12 @@ function Addservice() {
         errors,
       }) => (
         <Space size={[18, 16]} wrap>
-        <Form className="ajoute" noValidate onSubmit={handleSubmit}>
+        <form className="ajoute" noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Titre</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>Titre</span>
+              <input
                 type="text"
                 name="Titre"
                 value={values.Titre}
@@ -120,14 +120,14 @@ function Addservice() {
                 isValid={touched.Titre && !errors.Titre}
                 isInvalid={touched.Titre && !!errors.Titre}
               />
-               <Form.Control.Feedback type="invalid" tooltip>
+               <p type="invalid" tooltip>
                   {errors.Titre}
-                </Form.Control.Feedback>
-            </Form.Group>
+                </p>
+            </div>
     
-            <Form.Group  controlId="validationFormikUsername2">
-              <Form.Label>DESCRIPTION</Form.Label>
-              <InputGroup hasValidation>
+            <div  controlId="validationFormikUsername2">
+              <span>DESCRIPTION</span>
+              <div hasValidation>
                 <textarea
                   type="text"
                   placeholder="description"
@@ -138,16 +138,16 @@ function Addservice() {
                   isValid={touched.description && !errors.description}
                   isInvalid={touched.description && !!errors.description}
                 />
-                <Form.Control.Feedback type="invalid" tooltip>
+                <p type="invalid" tooltip>
                   {errors.description}
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-          </Form.Row>
+                </p>
+              </div>
+            </div>
+          </div>
          
        
 
-          <Form.Group>
+          <div>
             
           
           <Upload 
@@ -157,12 +157,12 @@ function Addservice() {
           <Button icon={<UploadOutlined />}>selectionner une image</Button>
         </Upload>
            
-          </Form.Group>
+          </div>
           <Button type="submit">Envoyer</Button>
   
          
           
-        </Form>
+        </form>
        
       </Space>
 

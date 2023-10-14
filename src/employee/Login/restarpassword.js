@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InputGroup,Button, Input  } from 'reactstrap';
+import { div,Button, Input  } from 'reactstrap';
 import LoadingPage from "../../loading/LoadingPage";
 import {  notification } from 'antd';
 import {  useNavigate, useLocation } from "react-router-dom";
@@ -53,17 +53,17 @@ function Password (props) {
     }
   return (
     <div className="pasword">{loading?<LoadingPage/> :<></>}
-      <InputGroup>
+      <div>
         <Input type="text" className="pinput" name="code" placeholder="Votre code de verification" value={state.code} onChange={handleChange} />
-      </InputGroup>
+      </div>
       <br />
-      <InputGroup>
+      <div>
         <Input type="password" className="pinput" name="npassword" placeholder="New Password" value={state.npassword} onChange={handleChange} />
-      </InputGroup>
+      </div>
       <br/>
-      <InputGroup>
+      <div>
         <Input  type="password" className="pinput" name="apassword" placeholder="confirme New Password" value={state.apassword} onChange={handleChange}  />
-      </InputGroup>
+      </div>
       <br/>
       <Button onClick={handleSubmit} >Send</Button>{' '}
     </div>

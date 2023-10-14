@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button,Nav, NavItem, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button,Nav, NavItem, form, FormGroup, Label, Input } from 'reactstrap';
 import LoadingPage from "../loading/LoadingPage";
 import axios from'axios';
 import {notification} from 'antd';
@@ -49,7 +49,7 @@ function Contact (){
      {loading?<LoadingPage/> :<></>}
 <Nav >
         <NavItem>
-        <Form className="formc" >
+        <form className="formc" >
       <FormGroup>
         <Label for="Name">Nom et Prenom</Label>
         <Input type="text"  minlength="3" maxlength="20" name="nom" id="Name" placeholder="votre nom et prenom ..."  value={state.nom} onChange={handleChange}/>
@@ -64,7 +64,7 @@ function Contact (){
         <Input type="textarea" name="description" id="description" name="description" value={state.description} onChange={handleChange} />
       </FormGroup>
       <Button   variant="primary" onClick={handleSubmit} type="submit">Envoyer</Button>
-    </Form>
+    </form>
         </NavItem>
         <NavItem>
         <div

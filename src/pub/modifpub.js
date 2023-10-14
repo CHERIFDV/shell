@@ -1,6 +1,6 @@
 
 
-import { Button,Form} from 'react-bootstrap';
+import { Button,form} from 'react-bootstrap';
 import { Formik } from "formik";
 import * as yup from "yup";
 import {  message,Space,Image,Avatar ,Card,Upload } from 'antd';
@@ -160,12 +160,12 @@ const handleChangep2=(e) =>{
         errors,
       }) => (
         <Space size={[18, 16]} wrap>
-        <Form  noValidate onSubmit={handleSubmit}>
+        <form  noValidate onSubmit={handleSubmit}>
          
-          <Form.Row>
-            <Form.Group controlId="validationFormik101">
-              <Form.Label>Titre</Form.Label>
-              <Form.Control
+          <div>
+            <div controlId="validationFormik101">
+              <span>Titre</span>
+              <input
                 type="text"
                 name="titre"
                 value={values.titre}
@@ -174,12 +174,12 @@ const handleChangep2=(e) =>{
                 isInvalid={touched.titre && !!errors.titre}
               />
              
-            </Form.Group>
-            <Form.Group controlId="validationFormik102">
-              <Form.Label>Description:</Form.Label>
+            </div>
+            <div controlId="validationFormik102">
+              <span>Description:</span>
              
               
-            </Form.Group>
+            </div>
             <textarea
                 type="text"
                 name="description"
@@ -191,10 +191,10 @@ const handleChangep2=(e) =>{
               />
            
            
-          </Form.Row>
+          </div>
          
 
-          <Form.Group>
+          <div>
           <Upload 
              maxCount={1}
           {...propss}
@@ -207,14 +207,14 @@ const handleChangep2=(e) =>{
           onChange={handleChangep2}>
           <Button icon={<UploadOutlined />}>selectionner une image</Button>
         </Upload>
-          </Form.Group>
+          </div>
          
         
           <Button type="submit"  >Envoyer</Button>
   
          
           
-        </Form>
+        </form>
        
       </Space>
 
